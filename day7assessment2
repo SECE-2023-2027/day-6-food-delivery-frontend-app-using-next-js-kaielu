@@ -1,0 +1,127 @@
+
+'use client'
+
+import React from 'react';
+
+const error = ({error}) => {
+  return (
+    <div className='h-[80vh] w-full justify-center align-center flex flex-col'>
+        <div className='m-auto'>
+          <img src='cartFailure.png' className='h-[200px] w-[200px]'></img>
+          <h1 className='font-bold text-2xl m-5'>Error in loading cart</h1>
+        </div>
+    </div>
+  )
+}
+
+export default error
+
+
+import React from 'react'
+
+const page = () => {
+    throw new Error("page not found");
+  return (
+    <div>
+        <p>Hello</p>
+    </div>
+  )
+}
+
+export default page
+
+
+import React from 'react'
+
+const page = () => {
+  return (
+    <div className='w-full h-[80vh] flex '>
+        <div className="flex flex-row w-fit">
+            <div className="p-10 w-full mx-20">
+                <form className='gap-10 flex flex-col w-fit mt-10'>
+                    <h1 className='font-bold mx-10 text-lg'>Fill out the form to reach us !</h1>
+                    <input className='p-2 w-full mx-5 border' placeholder='Enter your Email'></input>
+                    <input className='p-2 w-full mx-5 h-[300px] border' placeholder='Enter your message'></input>
+                    <button className='font-bold text-sm py-1 px-5 rounded-lg bg-blue-400 text-white mx-auto'>Submit</button>
+                </form>
+            </div>
+        </div>
+        <div className='h-[80vh] items-center w-[60vw] justify-center align-center flex flex-row gap-25'>
+          <table>
+            <tr>
+              <td className='px-10 py-5'>
+                Email
+              </td>
+              <td>
+                <p className='font-bold'>message@foodapp.com</p>
+              </td>
+            </tr>
+            <tr>
+              <td className='px-10 py-5'>
+                Twitter
+              </td>
+              <td>
+              <p className='font-bold'>@foodappOfficial</p>
+              </td>
+            </tr>
+            <tr>
+              <td className='px-10 py-5'>
+                Instagram
+              </td>
+              <td>
+              <p className='font-bold'>@foodappOfficial</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+  )
+}
+
+export default page
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import Header from '../components/Header';
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata = {
+  title: "Food App ",
+  description: "Food App UI",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Header/>
+        {children}
+      </body>
+    </html>
+  );
+}
+
+import React from 'react'
+
+const notFound = () => {
+  return (
+    <div className='h-[80vh] w-full flex'>
+        <div className='m-auto'>
+            <p className="text-[100px] font-bold">404</p>
+            <p className='m-5'>Page Not Found</p>
+        </div>
+    </div>
+  )
+}
+
+export default notFound
